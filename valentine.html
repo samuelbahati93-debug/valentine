@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Be My Valentine 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 320px;
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background-color: #ccc;
+            position: absolute;
+        }
+
+        #result {
+            display: none;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="question">
+    <h1>Will you be my Valentine Evelyne? 💘</h1>
+    <button id="yes" onclick="sayYes()">Yes 💖</button>
+    <button id="no" onmouseover="moveNo()">No 😢</button>
+</div>
+
+<div class="container" id="result">
+    <h1>Congratulations 🎉💖</h1>
+    <p>You are my Valentine!</p>
+    <img src="congratulations-confetti-banner.webp" alt="Valentine Image">
+</div>
+
+<script>
+    function moveNo() {
+        const noBtn = document.getElementById("no");
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+
+    function sayYes() {
+        document.getElementById("question").style.display = "none";
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
